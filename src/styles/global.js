@@ -1,0 +1,110 @@
+import { createGlobalStyle } from "styled-components"
+
+const globalStyle = createGlobalStyle`
+  /* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+  */
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+  }
+  html, body {
+    height: 100%;
+  }
+  body {
+    background: ${props => props.theme.colors.body};
+    color: ${props => props.theme.colors.font};
+    line-height: 1.6;
+    font-size: 100%;
+    font-weight: 400;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",  "Hiragino Sans", Meiryo, sans-serif;
+    -webkit-text-size-adjust: none;
+  }
+  article, aside, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+  a {
+    color: ${props => props.theme.colors.link};
+    text-decoration: none;
+    transition: .2s;
+    :focus{
+      outline: none;
+    }
+    :hover{
+      color: ${props => props.theme.colors.linkHover};
+    }
+  }
+  ol, ul, li {
+    list-style: none;
+  }
+  blockquote, q {
+    quotes: none;
+  }
+  blockquote::before, blockquote::after,
+  q::before, q::after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  img {
+  	max-width: 100%;
+  }
+  button,
+  input {
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    border: none;
+    outline: none;
+    appearance: none;
+    border-radius: 0;
+    resize: none;
+    &:focus {
+      outline: none;
+    }
+  }
+  /* Article link style below */
+  .urlhash-class {
+    position: absolute;
+    left: -18px;
+    text-decoration: none;
+    border-bottom: 0;
+    transition: all 0.15s ease-out;
+    svg {
+      fill: rgb(100, 100, 100);
+    }
+    &:hover {
+      transform: scale(1.3, 1.3);
+      svg {
+        fill: rgb(123, 60, 229);
+      }
+      transition: all 0.15s ease-out;
+    }
+  }
+`
+export default globalStyle
