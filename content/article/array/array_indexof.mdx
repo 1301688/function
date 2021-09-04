@@ -1,10 +1,10 @@
 ---
-title: "@TITLE"
-date: "@DATE"
+title: "配列要素の添字を返却するとき"
+date: "2021-09-04T16:11:55Z"
 updateDate: ""
-category: "@CATEGORYFOLDER"
-tags: "@TAGS"
-description: "まだ書いていません"
+category: "array"
+tags: "array"
+description: "Array.prototype.indexOf( )"
 emoji: "🙂"
 topImage: ""
 ---
@@ -13,17 +13,30 @@ topImage: ""
 
 # 結論
 
-- ()を使用する
+- indexOf()を使用する
 
-- とは
-  - 〜使用する
-  - 〜するメゾット
-  - 〜の時に使用することが多い
-  - 〜という前提条件がある
+- indexOf とは(array)
+  - 配列内の要素の添字を求めて、ある要素の存在を求めたり、配列を更新する時に使用する
+  - 引数に与えられた内容と同じ内容を持つ最初の配列要素の添字を返すメゾット
+  - 配列内の要素をループする時に同時に使用されることが多い
+  - 存在しない場合は-1 を返す
 
 # 自分が理解できたドキュメントが必ず存在するから
 
 # ユースケース
+
+- ある要素の存在をすべて見つける
+
+```
+let indices = [];
+const arr = ["a", "b", "a", "c", "a", "d"];
+const element = "a";
+let idx = arr.indexOf(element);
+while (idx != -1) {
+  indices.push(idx);
+  idx = arr.indexOf(element, idx + 1);
+}
+```
 
 # その使用したドキュメントを、以下項目に沿って、
 
@@ -31,8 +44,13 @@ topImage: ""
 
 ## 今回の目的　達成したい箇所 ユースケース
 
-- ()を使って小さく動かせるようになる
+- typeOf()を使いこなす
 - ユースケースを書き出す
+
+# 問題　理解できていない箇所
+
+- 式のアルゴリズム
+- 書き方
 
 ## 問題　理解できていない箇所
 

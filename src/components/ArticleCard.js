@@ -110,11 +110,11 @@ const ArticleCard = ({ node }) => {
       <ArticleWrapper>
         <Link to={node.fields.slug} className="article-card-link">
           <ThumbnailContainer>
-            <div>Thumbnail</div>
+            <div>{node.frontmatter.emoji}</div>
           </ThumbnailContainer>
           <ArticleTitle>{title}</ArticleTitle>
         </Link>
-        <ArticleText>ArticleText</ArticleText>
+        <ArticleText>{node.frontmatter.description}</ArticleText>
         <ArticleMeta>
           <Label>
             <TagLabel slug={node.frontmatter.tags} isLink="true" />
