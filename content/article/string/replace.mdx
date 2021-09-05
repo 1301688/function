@@ -21,11 +21,24 @@ topImage: ""
 
 # 基礎基本を抑える
 
-- 使い方
+# 構文
 
 ```
 let str = 文字列
 str.replace( 対象の文字, 　置換する文字)；
+```
+
+# ユースケース
+
+- 関数の合成（連鎖）
+
+```
+const template = 'hh:mm:ss tt';
+
+const clockTime = template.replace('hh','03')
+.replace('mm','33')
+.replace('ss','33')
+.replace('tt','PM')
 ```
 
 # 自分が理解できたドキュメントが必ず存在するから

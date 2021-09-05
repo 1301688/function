@@ -22,6 +22,30 @@ topImage: ""
 
 # 自分が理解できたドキュメントが必ず存在するから
 
+# 構文
+
+- arr.reduce(callback( accumulator, currentValue[, index[, array]] ) {
+  // return result from executing something for accumulator or currentValue
+  }[, initialValue]);
+- 引数
+- callback
+
+  - 配列のすべての要素 (initialValue が提供されなかった場合は、最初を除く) に対して実行される関数です。
+
+- これは 4 つの引数を取ります。
+
+- accumulator
+  - callback の返値を蓄積するアキュームレーターです。これは、コールバックの前回の呼び出しで返された値、あるいは initialValue が指定されている場合はその値となります (以下を参照ください)。
+- currentValue
+  - 現在処理されている配列の要素です。
+- index 省略可
+  - 現在処理されている配列要素のインデックスです。initialValue が指定された場合はインデックス 0 から、そうでない場合はインデックス 1 から開始します。
+- array 省略可
+  - reduce() が呼び出された配列です。
+- initialValue 省略可
+  - callback の最初の呼び出しの最初の引数として使用する値。initialValue が与えられなかった場合、配列の最初の要素がアキュムレーターの初期値として使用され、currentValue としてスキップされます。空の配列に対して reduce() を呼び出した際、initialValue が指定されていないと TypeError が発生します。
+- 第一引数はコールバック関数で第二引数はコールバック関数の最初の呼び出し時に渡される初期値
+
 # ユースケース
 
 - 配列の中から最大値を見つける
