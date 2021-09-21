@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import postContentStyle from "../styles/postContent"
 
 const IndexContent = styled.div`
   max-width: ${props => props.theme.sizes.maxWidth};
@@ -13,8 +14,16 @@ const IndexContent = styled.div`
   }
 `
 
+const PostContent = styled.div`
+  ${postContentStyle}
+`
+
 const ContentWrapper = ({ children }) => {
-  return <IndexContent>{children}</IndexContent>
+  return (
+    <PostContent>
+      <IndexContent>{children}</IndexContent>
+    </PostContent>
+  )
 }
 
 export default ContentWrapper
