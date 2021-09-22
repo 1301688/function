@@ -11,7 +11,7 @@ topImage: ""
 
 # はじめに、なぜそうなったのか？から学べばキャッチアップしやすい
 
-## 結論
+## 結論(conclusion)
 
 - find()を使用する
 
@@ -21,7 +21,7 @@ topImage: ""
   - ID 検索の時に使用することが多い
   - 「条件に合う最初のひとつを探す」という前提条件がある
 
-## 構文
+## 構文(sintax)
 
 ```js
 array.find(callback(element[, index[, array]]) {
@@ -29,10 +29,18 @@ array.find(callback(element[, index[, array]]) {
 }[, thisArg]);
 ```
 
-- currentValue = 現在処理されている配列の要素
-- index = 配列内の currentValue の添字
-- array = forEach()が呼び出されている配列
-- thisArg = callback 内で this として使用する値
+## 引数(argument)
+
+- 1. callback = コールバック関数　配列内の各要素に対して実行する関数　次の 3 つの引数をとる
+  - element = 配列内で現在処理されている要素
+  - index = 配列内の currentValue の添字
+  - array = forEach()が呼び出されている配列
+- 2. thisArg = callback 内で this として使われるオブジェクト
+
+## 返り値(return value)
+
+- 配列の中で、提供されたテスト関数を満足する最初の要素の値
+- 見つからなかった場合は undefined を返す
 
 ## ユースケース
 
