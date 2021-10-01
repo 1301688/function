@@ -1,0 +1,134 @@
+---
+title: "配列にある要素が存在するか調べたいとき"
+date: "2021-10-01T07:32:57Z"
+updateDate: ""
+category: "array"
+tags: "array"
+description: "Array.prototype.some( )"
+emoji: "🙂"
+topImage: ""
+---
+
+## 結論
+
+-some( )を使用する
+
+- some とは
+  - 配列に指定した条件の要素が存在するか調べたい時に使用する
+  - 与えられたテスト関数の条件に合う要素が存在するときに*真偽値（ブール値）*を返すメゾット
+  -
+  - 配列とコールバック関数を使用するという前提条件がある
+
+## 構文
+
+```js
+array.some(callback(element[, index[, array]]) {
+  // 実行する文
+}[, thisArg]);
+```
+
+- callback = 各要素に対して実行するコールバック関数 1~3 つの引数を受け付ける
+- element = 現在処理されている配列の要素
+- index = 配列内の element の添字
+- array = some()が呼び出されている配列
+- thisArg = callback 内で this として使用する値、オブジェクト
+
+## 返り値
+
+- 配列内の少なくとも 1 つの要素でコールバック関数が真と解釈される値を返した場合は true 、それ以外は false
+
+## some( )のサンプルコード
+
+```js
+// 一般的なタイプ
+const hairetu = [1, 3, 0]
+
+hairetu.some((element, index, array) => {
+  element === 3 // => true
+  console.log(element + "[" + index + "]" + "[" + array + "]")
+})
+```
+
+```js
+// ある値が配列の存在するかどうかのチェック
+const hairetu = [8010, 168, 216]
+
+function checkName(array, value) {
+  return array.some(function (arrayValue) {
+    return value === arrayValue
+  })
+}
+
+checkName(hairetu, 123) // false
+checkName(hairetu, 8010) // true
+```
+
+```js
+// アロー関数を使ったある値が配列の存在するかどうかのチェック
+const hairetu = [8010, 168, 216]
+
+function checkName(array, value) {
+  return array.some(arrayValue => value === arrayValue)
+}
+
+checkName(hairetu, 123) // false
+checkName(hairetu, 8010) // true
+```
+
+```js
+const hairetu = [1, 3, 0]
+
+hairetu.some((element, index, array) => {
+  console.log(element + "[" + index + "]" + "[" + array + "]")
+})
+```
+
+```js
+const hairetu = [1, 3, 0]
+
+hairetu.some((element, index, array) => {
+  console.log(element + "[" + index + "]" + "[" + array + "]")
+})
+```
+
+## some( )の実行内容
+
+- 与えられた関数 callback を配列に含まれる各要素に対して一度ずつ、callback が真と解釈される値 (論理型に変換した際に真となる値) を返す要素が見つかるまで呼び出す
+- そのような要素が見つかると、some() はただちに true を返す
+- 見つからなかった場合、some() は false を返す
+- callback は次の 3 つの引数で呼び出される
+  1. 要素の値
+  2. 要素のインデックス
+  3. 走査されている配列
+- some() に thisArg 引数が与えられると、それがコールバックの this として使用される
+- それ以外は、undefined 値が this として使用される
+- some() は呼び出された配列を変化させない
+- some() の呼び出しが開始された後に追加された配列要素に対しては、callback は実行されない
+- 既存の配列要素が変更されたり、削除されたりした場合、callback に渡される値は some() がそれらを訪れた時点での値になり、削除された要素を訪問することはない
+
+## 今回の目的　達成したい箇所 ユースケース
+
+- some()を使って小さく動かせるようになる
+- ユースケースを書き出す
+
+## 問題　理解できていない箇所
+
+- this 使用時の書き方
+
+## 解決策　対策手順の概要
+
+- 参考サイト調査
+- わからない時はコピペでも良いからとにかく PDCA を回す
+- 場数をふやす
+
+## 目的達成手順　順序立てた目的達成手順
+
+- 1.場数を増やす
+- 2.使用傾向を集める
+- 3.データが集まったら集中学習する
+
+## まとめ　ポジティブ意見
+
+## 自分がわからないと意味がないので自分の言葉でアウトプットすること
+
+---
